@@ -34,28 +34,13 @@ public class Board {
     }
 
     public void setValueInBoard(int row, int col, int val) {
-        for (int i = 0; i < 9; i++) {
-
-            List<SudokuElement> Row = board.get(i).getSudokuRow();
-            for (int j = 0; j < 9; j++) {
-                if (i == row && j == col) {
-                    board.get(i).getSudokuRow().get(j).setValue(val);
-                }
-            }
-        }
+        board.get(row).getSudokuRow().get(col).setValue(val);
     }
 
     public int getValueInBoard(int row, int col) {
-        int val = 0;
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (i == row && j == col) {
-                    val = board.get(i).getSudokuRow().get(j).getValue();
-                }
-            }
-        }
-        return val;
+        return board.get(row).getSudokuRow().get(col).getValue();
     }
+
 
     public boolean checkRow(int row, int possible) {
         for (int i = 0; i < 9; i++) {
@@ -73,6 +58,10 @@ public class Board {
             }
         }
         return false;
+    }
+
+    public boolean checkRowOrColumn(int i, int j, CheckRowOrColumn checkRowOrColumn) {
+       return false;
     }
 
     public boolean checkBox(int ro, int col, int possible) {
