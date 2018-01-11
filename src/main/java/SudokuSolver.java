@@ -31,7 +31,7 @@ public class SudokuSolver {
     }
 
     public boolean isPosibleValueInRowColBox(Board board, int row, int col, int possible) {
-        return board.checkRow(row, possible) || board.checkColumn(col, possible) || board.checkBox(row, col, possible);
+        return !(board.checkRow(row, possible) || board.checkColumn(col, possible) || board.checkBox(row, col, possible));
     }
 
 }
