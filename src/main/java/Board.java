@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Board {
     List<SudokuRow> board = new ArrayList<>();
-
-    public Board() {
-    }
 
     public void initBoard() {
         for (int i = 0; i < 9; i++) {
@@ -43,25 +41,31 @@ public class Board {
 
 
     public boolean checkRow(int row, int possible) {
-        for (int i = 0; i < 9; i++) {
-            if (getValueInBoard(row, i) == possible) {
-                return true;
-            }
-        }
-        return false;
+//        for (int i = 0; i < 9; i++) {
+//            if (getValueInBoard(row, i) == possible) {
+//                return true;
+//            }
+//        }
+       return checkRowOrColumn(i ->getValueInBoard(row, i) == possible  );
+
     }
 
     public boolean checkColumn(int col, int possible) {
+//        for (int i = 0; i < 9; i++) {
+//            if (getValueInBoard(i, col) == possible) {
+//                return true;
+//            }
+//        }
+        return checkRowOrColumn(i-> getValueInBoard(i, col)==possible);
+    }
+
+    public boolean checkRowOrColumn(Predicate<Integer> valueChecker) {
         for (int i = 0; i < 9; i++) {
-            if (getValueInBoard(i, col) == possible) {
+            if (valueChecker.test(i)) {
                 return true;
             }
         }
         return false;
-    }
-
-    public boolean checkRowOrColumn(int i, int j, CheckRowOrColumn checkRowOrColumn) {
-       return false;
     }
 
     public boolean checkBox(int ro, int col, int possible) {

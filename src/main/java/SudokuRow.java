@@ -4,9 +4,6 @@ import java.util.List;
 public class SudokuRow {
     private List<SudokuElement> sudokuRow = new ArrayList<>();
 
-    public SudokuRow() {
-    }
-
     public List<SudokuElement> getSudokuRow() {
         return sudokuRow;
     }
@@ -17,5 +14,4 @@ public class SudokuRow {
             sudokuRow.add(elementZero);
         }
     }
-
 }

@@ -1,6 +1,4 @@
 public class SudokuSolver {
-    public SudokuSolver() {
-    }
 
     public  boolean solve(Board board) {
         for (int i = 0; i < 9; i++) {
