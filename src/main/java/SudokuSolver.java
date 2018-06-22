@@ -1,19 +1,19 @@
 public class SudokuSolver {
 
-    public  boolean solve(Board board) {
+    public boolean solve(Board board) {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 if (board.getValueInBoard(i, j) != 0) {
                     continue;
                 }
-                solveCell(board,i,j);
+                solveCell(board, i, j);
 
             }
         }
         return true;
     }
 
-    public boolean solveCell(Board board, int i, int j){
+    public boolean solveCell(Board board, int i, int j) {
         for (int n = 1; n < 10; n++) {
             if (isPosibleValueInRowColBox(board, i, j, n)) {
                 board.setValueInBoard(i, j, n);

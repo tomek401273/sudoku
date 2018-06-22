@@ -41,22 +41,11 @@ public class Board {
 
 
     public boolean checkRow(int row, int possible) {
-//        for (int i = 0; i < 9; i++) {
-//            if (getValueInBoard(row, i) == possible) {
-//                return true;
-//            }
-//        }
-       return checkRowOrColumn(i ->getValueInBoard(row, i) == possible  );
-
+        return checkRowOrColumn(i -> getValueInBoard(row, i) == possible);
     }
 
     public boolean checkColumn(int col, int possible) {
-//        for (int i = 0; i < 9; i++) {
-//            if (getValueInBoard(i, col) == possible) {
-//                return true;
-//            }
-//        }
-        return checkRowOrColumn(i-> getValueInBoard(i, col)==possible);
+        return checkRowOrColumn(i -> getValueInBoard(i, col) == possible);
     }
 
     public boolean checkRowOrColumn(Predicate<Integer> valueChecker) {

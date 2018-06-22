@@ -14,15 +14,11 @@ public class FileReader {
     List<String> choosenGrid = new ArrayList<>();
 
     public void readFile() {
-
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("file/text.txt").getFile());
-
         Path path = Paths.get(file.getPath());
-
         try {
             allGrids = Files.readAllLines(path);
-
         } catch (IOException e) {
             System.out.println("Something go wrong with file.....");
             System.out.println(e);
@@ -34,11 +30,11 @@ public class FileReader {
 
         for (int i = 0; i < allGrids.size(); i++) {
             acualRow = allGrids.get(i);
-
             if (allGrids.get(i).equals(grid)) {
                 numberchoosenGrid = i;
                 numberChossenPlusNine = numberchoosenGrid + 9;
             }
+
             if (numberchoosenGrid > -1) {
                 choosenGrid.add(allGrids.get(i));
                 if (i == numberchoosenGrid + 9) {
@@ -53,7 +49,6 @@ public class FileReader {
         int[][] exportedData = new int[9][9];
         String row;
         int value;
-
         System.out.println("Your grid: " + grid.get(0));
         System.out.println();
         grid.remove(0);

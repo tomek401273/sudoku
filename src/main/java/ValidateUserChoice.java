@@ -7,7 +7,7 @@ public class ValidateUserChoice {
         int gridI = 0;
         String numberGrid = "";
 
-        System.out.println("Which grid would You like to solve. Write number since 01 to 50");
+        System.out.println("Which grid would You like to solve. Write number since 1 to 50");
 
         while (gridI <= 0) {
             try {

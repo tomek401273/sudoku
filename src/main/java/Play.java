@@ -11,7 +11,6 @@ public class Play {
             FileReader fileReader = new FileReader();
             Scanner sc = new Scanner(System.in);
 
-
             ValidateUserChoice validateUserChoice = new ValidateUserChoice();
             numberGrid = validateUserChoice.validate();
 
